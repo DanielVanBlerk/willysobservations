@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Willys growth in 2026: some questions worth exploring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b1f2a;--muted:#5d6472;--red:#d71920;--grey:#98a1b3;--rule:#e2e4ea;--bg:#fafafb;--panel:#fff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.6}
+main{max-width:800px;margin:0 auto;padding:56px 24px 80px}
+h1{font-weight:800;font-size:clamp(30px,5.4vw,50px);line-height:1.08;letter-spacing:-.02em;margin:12px 0 20px}
+h2{font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-.01em;margin:56px 0 12px}
+p{margin:0 0 16px;max-width:66ch}
+.by{color:var(--muted);font-size:14px;margin:0}
+.lede{font-size:20px;line-height:1.5;color:#2c3240}
+.note{border-left:4px solid var(--red);padding:2px 0 2px 16px;color:var(--muted);font-size:15px;margin:24px 0}
+figure{margin:28px 0;background:var(--panel);border:1px solid var(--rule);padding:20px 20px 12px}
+figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+figure h3{font-size:16px;font-weight:600;margin:0 0 4px}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:inherit}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;border-top:2px solid var(--ink);margin:28px 0}
+.facts div{padding:14px 16px 14px 0}
+.facts b{display:block;font-size:15px}
+.facts span{font-size:14px;color:var(--muted)}
+.tw{overflow-x:auto;margin:20px 0}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.5}
+th,td{text-align:left;vertical-align:top;padding:12px 14px 12px 0;border-bottom:1px solid var(--rule)}
+th{font-weight:600;border-bottom:2px solid var(--ink);font-size:14px}
+td:first-child{font-weight:600;width:28%}
+ul.src{padding-left:20px;font-size:14px;color:var(--muted)}
+ul.src li{margin-bottom:6px}
+a{color:var(--ink);text-decoration-color:var(--red);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.sig{margin-top:56px;padding-top:20px;border-top:1px solid var(--rule)}
+</style>
+</head>
+<body>
+<main>
+<p class="by">Daniel Van Blerk, application for Business Analyst, Customer Insights, Willys. September 2026.</p>
+<h1>Investigation: Willys grew 1.0%, The market grew 3.7%</h1>
+<p class="lede">For two consecutive quarters, Willys has grown at a slower rate than the Swedish grocery market. Before drawing conclusions, I decided to investigate four aspects that would influence this rate: a strong year before, falling prices, the food VAT cut, and stores closed for rebuilds. This note goes through what the public record shows, and a few analyses that could be interesting to try with Willys Plus data.</p>
+<p class="note">This is an outside-in view built only from public reports. With no access to internal data, it is simply a set of questions I found interesting.</p>
+
+<h2>What The Public Numbers Say</h2>
+<div class="facts">
+  <div><b>Growth Has Slowed Down, But Volume Has Not</b><span>Axfood describes recent growth as volume-driven in a market with food price deflation.</span></div>
+  <div><b>Profit Is Holding, While Margin Is Squeezed</b><span>Willys Q1 2026 operating margin was 4.1%, down from 4.3%, on SEK 498m operating profit.</span></div>
+  <div><b>The Loyalty Base Is Large</b><span>Willys Plus has passed 4 million members, across a network of about 257 stores.</span></div>
+</div>
+
+<figure>
+  <h3>Sales Growth, Willys vs The Total Food Market (%)</h3>
+  <svg id="c1" role="img" aria-label="Grouped bar chart. Q2 2025: Willys 10.2, market 6.1. Q1 2026: Willys 3.8, market 4.4. Q2 2026: Willys 1.0, market 3.7." viewBox="0 0 720 320"></svg>
+  <figcaption>Market figures are the total-market growth Axfood reports from HUI Research. Willys figures are reported chain sales growth.</figcaption>
+</figure>
+
+<p>Willys beat the market by 4.1 points in Q2 2025, then fell behind by 0.6 points in Q1 2026 and 2.7 points in Q2 2026. Management points to three drivers: a very high base from last year, price deflation, and, in Q1, two stores that were closed for refurbishment or relocation and would have added roughly one point of growth had they been open. On a like-for-like basis, Q2 was about minus 1%.</p>
+
+<figure>
+  <h3>Growth In Q2, Compounded Over Two Years (%)</h3>
+  <svg id="c2" role="img" aria-label="Bar chart of two-year compounded growth for Q2. Willys 11.3 percent, market 10.0 percent." viewBox="0 0 420 260"></svg>
+  <figcaption>Compounded from Q2 2025 and Q2 2026 growth rates: 1.102 × 1.010 for Willys, 1.061 × 1.037 for the market. An approximation, since chain and market definitions may differ slightly.</figcaption>
+</figure>
+
+<p>Looked at over two years, Willys is still slightly ahead of the market. That does not mean the slowdown can be ignored, but the headline gap may make it look bigger than it is. A sensible first step would be to work out how much of the gap is base effect, and how much reflects a change in customer behaviour.</p>
+
+<h2>Why The Price Environment Complicates The Reading</h2>
+<p>On 1 April 2026, Sweden cut food VAT from 12% to 6%, in place until 31 December 2027. If a shelf price rose or fell only because of VAT, the consumer price would move by (1.06 ÷ 1.12 − 1) <b>−5.4%</b>. Retailers report sales excluding VAT, so a pure pass-through leaves revenue per unit unchanged, while shoppers see lower prices. Therefore, consumer price indices and reported sales are measuring different things, and a price-volume bridge has to be built on the right basis.</p>
+<p>Two other aspects are significant. The government has set up a food price commission to monitor whether retailers pass the cut on, and in July it opened a further inquiry into a more selective VAT model. And because the cut expires at the end of 2027, unless there is an extension, there is a one-off price step up in January 2028. Monitoring customer behaviourleading up to and around that date might be worth exploring in good time.</p>
+
+<h2>Five Questions I Would Be Curious To Investigate</h2>
+<div class="tw">
+<table>
+<tr><th>Question</th><th>One Way To Look At It</th><th>What It Could Inform</th></tr>
+<tr><td>Is the slowdown mostly base effect rather than customer loss?</td><td>Track active Plus members, visit frequency and basket size on a two-year basis, split by member tenure.</td><td>Whether to react with more promotion spend, or hold course.</td></tr>
+<tr><td>Has lower pricing led to the volume response one might expect?</td><td>Compare pre and post 1 April volume by category. Use products still at 25% VAT, such as non-food, as a control group.</td><td>Where to reinvest price room, and which categories are price-elastic.</td></tr>
+<tr><td>Do rebuilt and new stores win share partly from nearby Willys stores?</td><td>Matched store pairs, difference-in-differences on catchment areas using member addresses.</td><td>Rollout order and the true net gain per Willys 5.0 conversion.</td></tr>
+<tr><td>Do different member groups behave differently, for example in frequency versus spend per trip?</td><td>Segment members by frequency, basket mix and promotion dependence. Estimate share of wallet from purchase patterns.</td><td>Which offers go to which group, and which segment to protect first.</td></tr>
+<tr><td>Could private label also support retention, not only margin?</td><td>Survival analysis of member retention against private label share, controlling for spend level.</td><td>Where to push Garant and Eldorado, and how to price them against branded goods.</td></tr>
+</table>
+</div>
+
+<h2>How I Approach My Qork</h2>
+<p>I like to begin by talking with the people who own the question, so that we agree on the decision the analysis should support. From there I write down what we expect to see before opening the data, which makes it easier to notice when the numbers say something different. I do most first passes in SQL, use BI tools for views people return to, and turn to Python or R only where a model adds something. I aim to finish with a clear suggestion the team can discuss and improve together.</p>
+
+<h2>Sources</h2>
+<ul class="src">
+<li><a href="https://www.axfood.com/newsroom/press-releases/2026/07/strengthened-presence-and-positive-earnings-development/">Axfood Q2 2026 press release</a>: retail sales, market growth, Willys growth, Willys Plus membership.</li>
+<li><a href="https://mb.cision.com/Main/1306/4374668/4192617.pdf">Axfood interim report Q2 2026</a>: net sales and retail sales by period.</li>
+<li><a href="https://www.investing.com/news/transcripts/earnings-call-transcript-axfood-q2-2026-profit-rises-as-sales-growth-lags-93CH-4792400">Axfood Q2 2026 earnings call transcript</a>: Willys 10.2% vs market 6.1% in 2025, like-for-like decline, deflation.</li>
+<li><a href="https://www.investing.com/news/company-news/axfood-q1-2026-slides-earnings-rise-but-market-share-concerns-weigh-93CH-4631448">Axfood Q1 2026 results summary</a>: market growth, Willys margin and store count, food inflation.</li>
+<li><a href="https://finance.yahoo.com/markets/stocks/articles/axfood-ab-lts-0r6r-q1-070212297.html">Axfood Q1 2026 call highlights</a>: store closures and the roughly one-point effect on Willys growth.</li>
+<li><a href="https://www.vatcalc.com/sweden/sweden-halves-food-vat-to-6-till-dec-2027/">Sweden halves food VAT to 6% till Dec 2027</a> and <a href="https://www.nordiskpost.com/2026/07/09/sweden-food-vat-change/">NordiskPost on the July 2026 VAT inquiry</a>.</li>
+</ul>
+
+<div class="sig">
+<p>I put this together out of curiosity about the role and the business. It rests on public information only, and I would be happy to hear where I have it wrong.</p>
+<p class="by">Daniel Van Blerk, Gothenburg. danielvanblerk4@gmail.com</p>
+</div>
+</main>
+
+<script>
+function bars(id,groups,w,h,max){
+  var svg=document.getElementById(id),ns="http://www.w3.org/2000/svg",pad={l:10,r:10,t:36,b:44},
+      ph=h-pad.t-pad.b,gw=(w-pad.l-pad.r)/groups.length,bw=Math.min(64,gw/3.2),out="";
+  var col=["#d71920","#98a1b3"],names=["Willys","Market"];
+  out+='<rect x="'+pad.l+'" y="8" width="12" height="12" fill="'+col[0]+'"/><text x="'+(pad.l+18)+'" y="19" font-size="13" fill="#1b1f2a">'+names[0]+'</text>';
+  out+='<rect x="'+(pad.l+90)+'" y="8" width="12" height="12" fill="'+col[1]+'"/><text x="'+(pad.l+108)+'" y="19" font-size="13" fill="#1b1f2a">'+names[1]+'</text>';
+  groups.forEach(function(g,i){
+    var cx=pad.l+gw*i+gw/2;
+    g.v.forEach(function(v,j){
+      var bh=v/max*ph,x=cx+(j?6:-bw-6),y=pad.t+ph-bh;
+      out+='<rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+bh+'" fill="'+col[j]+'"><title>'+names[j]+' '+g.label+': '+v.toFixed(1)+'%</title></rect>';
+      out+='<text x="'+(x+bw/2)+'" y="'+(y-6)+'" text-anchor="middle" font-size="15" font-weight="600" fill="#1b1f2a">'+v.toFixed(1)+'</text>';
+    });
+    out+='<text x="'+cx+'" y="'+(h-16)+'" text-anchor="middle" font-size="14" fill="#5d6472">'+g.label+'</text>';
+  });
+  out+='<line x1="'+pad.l+'" x2="'+(w-pad.r)+'" y1="'+(pad.t+ph)+'" y2="'+(pad.t+ph)+'" stroke="#1b1f2a" stroke-width="1.5"/>';
+  svg.innerHTML=out;
+}
+bars("c1",[{label:"Q2 2025",v:[10.2,6.1]},{label:"Q1 2026",v:[3.8,4.4]},{label:"Q2 2026",v:[1.0,3.7]}],720,320,12);
+bars("c2",[{label:"Q2 2024 to Q2 2026",v:[11.3,10.0]}],420,260,13);
+</script>
+</body>
+</html>
